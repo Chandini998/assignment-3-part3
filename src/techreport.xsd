@@ -1,0 +1,109 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="techreport">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="chapter" minOccurs="1" maxOccurs="unbounded" />
+			</xsd:sequence>
+			<xsd:attribute name="title" type="xsd:string" use="required"/>
+			<xsd:attribute name="author" type="xsd:string" use="optional"/>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="chapter">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="chapter-title" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element ref="section" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="section">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="section-title" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element ref="paragraph" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="paragraph">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="content"/>
+				<xsd:element ref="em"/>
+				<xsd:element ref="link"/>
+				<xsd:element ref="b"/>
+				<xsd:element ref="list"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="content">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="em"/>
+				<xsd:element ref="link"/>
+				<xsd:element ref="b"/>
+				<xsd:element ref="list"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+ 
+	<xsd:element name="em">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="em"/>
+				<xsd:element ref="link"/>
+				<xsd:element ref="b"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="link">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element ref="em"/>
+			<xsd:element ref="link"/>
+			<xsd:element ref="b"/>
+			</xsd:choice>
+			<xsd:attribute name="target" type="xsd:string" use="required"/>
+		</xsd:complexType>
+		</xsd:element>
+
+	<xsd:element name="b">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="link"/>
+				<xsd:element ref="em"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="item">
+		<xsd:complexType mixed="true">
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="em"/>
+				<xsd:element ref="link"/>
+				<xsd:element ref="b"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="list">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="item" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		<xsd:attribute name="type" use="optional" default="ordered">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="ordered"/>
+					<xsd:enumeration value="unordered"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+		
+</xsd:schema>

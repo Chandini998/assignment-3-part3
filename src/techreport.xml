@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<techreport title="Research on HTML" author="Chandini">
+	<chapter>
+		<chapter-title>Chapter 1: Introduction</chapter-title>
+		<section>
+			<section-title>Section 1: Overview</section-title>
+			<paragraph>
+				<content>
+					A <b>Web browser</b> is a graphic user interface for a user to interact with various Web applications. 
+					A Web browser communicates with the Web servers that host the Web applications over the Internet. 
+					A Web browser can send requests to a Web server for data or service. 
+					The Web server will reply and send back the response data in a language called <b>HTML</b>, short for Hypertext Markup Language. 
+				</content>
+			</paragraph>
+		</section>
+		<section>
+			<section-title>Section 2: Web Architecture </section-title>
+			<paragraph>
+				<content>
+					A typical web application involves <b>Four Tiers</b> 					
+				</content>
+				<list type="unordered">
+					<item>
+						<em>Web browser</em> : They are the graphic user interface for the clients to interact with Web applications.	
+					</item>
+					<item>
+						<em>Web server</em> : The Web server is mainly for receiving document requests and data submission from Web browsers.
+					</item>
+					<item>
+						<em>App Server</em> : The application server is responsible for computing the business logics of the Web application.
+					</item>
+					<item>
+						<em>Database</em> : used to Store the Data.
+					</item>
+				</list>
+			</paragraph>
+		</section>
+	</chapter>
+	
+	<chapter>
+		<chapter-title>Chapter 2: HTML</chapter-title>
+		<section>
+			<section-title>Section 1: HTML Basics</section-title>
+			<paragraph>
+				<content>
+					HTML is a markup language. 
+					An HTML document is basically a text document marked up with instructions as to document logical structure and document presentation.  
+				</content>
+			</paragraph>
+		</section>
+		<section>
+			<section-title>Section 2: HTML Tags </section-title>
+			<paragraph>
+				<content>
+					Some Important Tags are 					
+				</content>
+				<list type="ordered">
+					<item>
+						<em>&lt;html&gt;</em>	
+					</item>
+					<item>
+						<em>&lt;head&gt;</em>
+					</item>
+					<item>
+						<em>&lt;title&gt;</em>
+					</item>
+					<item>
+						<em>&lt;body&gt;</em>
+					</item>
+				</list>
+			</paragraph>
+		</section>
+	</chapter>
+	
+	<chapter>
+		<chapter-title> References </chapter-title>
+		<section>
+			<section-title>Website</section-title>
+			<paragraph>
+				<content>
+					<link target="https://www.w3schools.com/">www.w3schools.com</link>
+				</content>
+			</paragraph>
+		</section>
+		<section>
+			<section-title>Book</section-title>
+			<paragraph>
+				<content>
+					HTML, CSS &amp; JavaScript Front-End Web Development Pearson uCertify Course and In One Hour a Day Textbook Bundle, 1st edition.				
+				</content>
+			</paragraph>
+		</section>
+	</chapter>
+	
+</techreport>
